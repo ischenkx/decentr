@@ -20,4 +20,9 @@ The most interesting part - economics. Say we have a currency in our system and 
 DO - data owner, F - file
 1. DO (L) sends a request to its parent node (H). H looks for a potential DH in its subtree. If the lookup fails, then H sends requests to the neighbours and waits for the response.
 2. When the DH is found, it's given the address of the DO. Then we build a direct tunnel between these nodes and transfer the batch.
-3. Now, we have to register the batch for the verification process in future (both DH and DO are interested in this). For this purpose, DO generates metadata and sends a register request to H. Now H can insert its name inside this transaction and get taxes in future.
+3. Now, we have to register the batch for the verification process in future (both DH and DO are interested in this). For this purpose, DO generates metadata and sends a register request to H.
+
+### Loading
+1. DO sends a request to the H to find the batch. H propagates the request and tries to find the DH. If noone responds, then the data can't be retrieved and all the DH's must be punished somehow.
+2. Then the DS and the DH build a secure tunnel and transfer the data.
+3. If the data is not correct I don't know what to do. (TO BE FIXED)
